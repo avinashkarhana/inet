@@ -413,7 +413,7 @@ void Gptp::synchronize()
     if (oldPeerSentTimeSync == -1)
         gmRateRatio = 1;
     else
-        gmRateRatio = (peerSentTimeSync - oldPeerSentTimeSync) / (origNow - newLocalTimeAtTimeSync) ;
+        gmRateRatio = (peerSentTimeSync - oldPeerSentTimeSync) / (syncIngressTimestamp - receivedTimeSync) ;
 
     auto settableClock = check_and_cast<SettableClock *>(clock.get());
     ppm newOscillatorCompensation = unit(gmRateRatio * (1 + unit(settableClock->getOscillatorCompensation()).get()) - 1);
@@ -426,6 +426,7 @@ void Gptp::synchronize()
     // adjust local timestamps, too
     pdelayRespEventIngressTimestamp += newLocalTimeAtTimeSync - oldLocalTimeAtTimeSync;
     pdelayReqEventEgressTimestamp += newLocalTimeAtTimeSync - oldLocalTimeAtTimeSync;
+    receivedTimeSync += newLocalTimeAtTimeSync - oldLocalTimeAtTimeSync;
 
     /************** Rate ratio calculation *************************************
      * It is calculated based on interval between two successive Sync messages *
