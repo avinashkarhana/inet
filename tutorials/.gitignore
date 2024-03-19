@@ -3,6 +3,4 @@
 .tkenvlog
 .cmdenv-log
 **/results/*
-*/cache/*
-*.png
-*.mp4
+_site

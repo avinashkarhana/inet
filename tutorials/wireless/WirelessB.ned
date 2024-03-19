@@ -10,7 +10,7 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+// along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
 package inet.tutorials.wireless;
@@ -21,13 +21,13 @@ import inet.node.inet.INetworkNode;
 network WirelessB extends WirelessA
 {
     submodules:
-        hostR1: <default("WirelessHost")> like INetworkNode {
+        hostR1: <hostType> like INetworkNode {
             @display("p=250,300");
         }
-        hostR2: <default("WirelessHost")> like INetworkNode {
+        hostR2: <hostType> like INetworkNode {
             @display("p=150,450");
         }
-        hostR3: <default("WirelessHost")> like INetworkNode {
+        hostR3: <hostType> like INetworkNode {
             @display("p=350,450");
         }
 }

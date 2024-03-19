@@ -3,32 +3,32 @@
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-//
+// 
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU Lesser General Public License for more details.
-//
+// 
 // You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
-//
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
 
 package inet.tutorials.configurator;
 
-import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+import inet.networklayer.configurator.ipv4.IPv4NetworkConfigurator;
 import inet.node.ethernet.Eth100M;
 import inet.node.ethernet.Eth10M;
-import inet.node.ethernet.EthernetSwitch;
+import inet.node.ethernet.EtherSwitch;
 import inet.node.inet.Router;
 import inet.node.inet.StandardHost;
-import inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer;
+import inet.visualizer.integrated.IntegratedCanvasVisualizer;
 
 
 network ConfiguratorA
 {
     @display("bgb=1610.5125,874.96497");
     submodules:
-        configurator: Ipv4NetworkConfigurator {
+        configurator: IPv4NetworkConfigurator {
             @display("p=100,100");
         }
         host0: StandardHost {
@@ -67,13 +67,13 @@ network ConfiguratorA
         host8: StandardHost {
             @display("p=1430.4075,736.3875");
         }
-        switch0: EthernetSwitch {
+        switch0: EtherSwitch {
             @display("p=518.4975,574.9875");
         }
-        switch2: EthernetSwitch {
+        switch2: EtherSwitch {
             @display("p=1162.08,574.9875");
         }
-        switch1: EthernetSwitch {
+        switch1: EtherSwitch {
             @display("p=821.1225,225.95999");
         }
         visualizer: IntegratedCanvasVisualizer {
